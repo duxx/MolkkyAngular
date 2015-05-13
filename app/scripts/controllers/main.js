@@ -8,10 +8,11 @@
  * Controller of the molkkyApp
  */
 angular.module('molkkyApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('MainCtrl', function ($scope, $mdSidenav) {
+		$scope.toggleSidenav = function(menuId) {
+			$mdSidenav(menuId).toggle();
+		};
+
+		$scope.nimi = 'antti';
+
+	});

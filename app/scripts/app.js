@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -23,11 +24,18 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/new', {
+        templateUrl: 'views/new.html',
+        controller: 'NewCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .controller('AppCtrl', function($scope, $mdSidenav) {
+    $scope.toggleSidenav = function(menuId) {
+      $mdSidenav(menuId).toggle();
+    };
+
+    $scope.nimi = 'antti';
   });
