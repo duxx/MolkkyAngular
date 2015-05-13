@@ -8,10 +8,6 @@
  * Controller of the molkkyApp
  */
 angular.module('molkkyApp')
-  .controller('NewCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('NewCtrl', function ($scope) {
+		$scope.players = [1, 2, 3, 4, 5, 6, 7];
+	});
