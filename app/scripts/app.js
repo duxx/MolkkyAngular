@@ -28,6 +28,10 @@ angular
         templateUrl: 'views/new.html',
         controller: 'NewCtrl'
       })
+      .when('/play', {
+        templateUrl: 'views/play.html',
+        controller: 'PlayCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -37,5 +41,7 @@ angular
       $mdSidenav(menuId).toggle();
     };
 
-    $scope.nimi = 'antti';
+    $scope.currentPlayer = 1;
+    $scope.currentPlayerName = 'Antti';
+    $scope.numPlayers = 2;
   });

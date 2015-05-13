@@ -1,18 +1,18 @@
 <div class="jumbotron">
 	<h1>Starting a new game</h1>
 	<p class="lead" ng-init="data.players=2">
-		First select the number of players: {{ data.players }}
+		First select the number of players: {{ numPlayers }}
 	</p>
 		<div layout="row">
 			<div flex="33" layout layout-align="center center">
 			</div>
-			<md-slider flex class="md-primary" md-discrete ng-model="data.players" step="1" min="1" max="7" aria-label="Num Players">
+			<md-slider flex class="md-primary" md-discrete ng-model="numPlayers" step="1" min="1" max="7" aria-label="Num Players">
 			</md-slider>
 			<div flex="33" layout layout-align="center center">
 			</div>
 		</div>
 	<p>
-		<md-button class="md-raised md-primary" ng-href="#/" type="button">Start</md-button>
+		<md-button class="md-raised md-primary" ng-href="#/play" type="button">Start</md-button>
 		<md-button class="md-raised" ng-href="#/" type="button">Cancel</md-button>
 	</p>
 </div>

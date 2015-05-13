@@ -1,0 +1,41 @@
+<h1>Play in progress</h1>
+
+<md-content>
+	<md-list>
+		<md-subheader class="md-no-sticky">Players</md-subheader>
+		<div ng-repeat="player in players">
+			<div layout="row">
+				<md-list-item class="md-3-line">
+					<div flex class="md-list-item-text">
+						<strong ng-click="changeName($event, player.id)">{{player.name}}</strong>
+						<h4>Plays in round {{player.playsInRound}}</h4>
+					</div>
+					<div flex layout layout-align="end center" class="md-list-item-text">
+						<p><strong>{{player.points}} pts. (+{{player.last}})</strong><br> {{player.missed}}/3 missed</p>
+					</div>
+				</md-list-item>
+			</div>
+			<div layout="row">
+				<md-divider flex ></md-divider>
+			</div>
+		</div>
+	</md-list>
+</md-content>
+
+<div class="jumbotron">
+	<h2>Input score for {{currentPlayerName}}</h2>
+	<md-radio-group ng-model="points" class="md-primary">
+		<div layout="column">
+			<div layout="row">
+				<md-radio-button flex ng-repeat="i in [0,1,2,3,4,5,6] track by $index" ng-value="{{$index}}"> {{$index}} </md-radio-button>
+			</div>
+			<div layout="row">
+				<md-radio-button flex ng-repeat="i in [7,8,9,10,11,12] track by $index" ng-value="{{i}}"> {{i}} </md-radio-button>
+				<md-button class="md-raised md-primary" ng-click="set(points)" type="button">Set</md-button>
+			</div>
+		</div>
+	</md-radio-group>
+</div>
+
+
+

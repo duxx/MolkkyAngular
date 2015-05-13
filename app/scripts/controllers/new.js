@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name molkkyApp.controller:AboutCtrl
+ * @name molkkyApp.controller:NewCtrl
  * @description
- * # AboutCtrl
+ * # NewCtrl
  * Controller of the molkkyApp
  */
 angular.module('molkkyApp')
-	.controller('NewCtrl', function ($scope) {
-		$scope.players = [1, 2, 3, 4, 5, 6, 7];
+	.controller('NewCtrl', function () {
+		
 	});
