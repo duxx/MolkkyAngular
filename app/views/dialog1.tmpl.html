@@ -1,14 +1,14 @@
 <md-dialog aria-label="Change Name Dialog">
   <form>
   <md-dialog-content class="sticky-container">
-    <md-subheader class="md-sticky-no-effect">Change name for player</md-subheader>
+    <md-subheader class="md-sticky-no-effect">Change name for player {{nameToChange }}</md-subheader>
     <div>
-      <md-input-container><label>New name for player {{$scope.players[playerId].name }}</label><input md-maxlength="30" required name="newname" ng-model="newname"></md-input-container>
+      <md-input-container><label>New name for player</label><input md-maxlength="30" required name="newname" ng-model="newname"></md-input-container>
     </div>
   </md-dialog-content>
   <div class="md-actions" layout="row">
     <span flex></span>
-    <md-button ng-click="answer('')" class="md-primary">
+    <md-button ng-click="cancel()" class="md-primary">
       Cancel
     </md-button>
     <md-button ng-click="answer(newname)" class="md-primary md-raised">

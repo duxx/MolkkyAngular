@@ -44,4 +44,16 @@ angular
     $scope.currentPlayer = 1;
     $scope.currentPlayerName = 'Antti';
     $scope.numPlayers = 2;
+  })
+  .service('sharedProperties', function() {
+    var hashtable = {};
+
+    return {
+      setValue: function(key, value) {
+        hashtable[key] = value;
+      },
+      getValue: function(key) {
+        return hashtable[key];
+      }
+    };
   });

@@ -1,16 +1,19 @@
 'use strict';
 
-function DialogController($scope, $mdDialog) {
-		$scope.hide = function() {
-			$mdDialog.hide();
-		};
-		$scope.calcel = function() {
-			$mdDialog.cancel();
-		};
-		$scope.answer = function(answer) {
-			$mdDialog.hide(answer);
-		};
-	}
+function DialogController($scope, $mdDialog, sharedProperties) {
+
+	$scope.nameToChange = sharedProperties.getValue('name')	;
+	
+	$scope.hide = function() {
+		$mdDialog.hide();
+	};
+	$scope.cancel = function() {
+		$mdDialog.cancel();
+	};
+	$scope.answer = function(answer) {
+		$mdDialog.hide(answer);
+	};
+}
 
 /**
  * @ngdoc function
@@ -20,7 +23,7 @@ function DialogController($scope, $mdDialog) {
  * Controller of the molkkyApp
  */
 angular.module('molkkyApp')
-	.controller('PlayCtrl', function ($scope, $mdDialog) {
+	.controller('PlayCtrl', function ($scope, $mdDialog, sharedProperties) {
 		$scope.players = [];
 
 		for(var i = 0; i < $scope.numPlayers; i++)
@@ -47,6 +50,8 @@ angular.module('molkkyApp')
 
 		$scope.changeName = function(ev, playerId)
 		{
+			sharedProperties.setValue('name', $scope.players[playerId].name);
+
 			$mdDialog.show({
 				controller: DialogController,
 				templateUrl: 'views/dialog1.tmpl.html',
